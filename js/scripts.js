@@ -3,18 +3,18 @@ function newItem() {
 
     let li = $('<li></li>');
     let inputValue = $('#input').val();
+    let list = $('#list');
     li.append(document.createTextNode(inputValue));
 
     if (inputValue === '') {
         alert("You must write something!");
     } else {
-        let list = document.querySelector('#list');
-        $('#list').append(li);
+        list.append(li);
     }
 
 
     li.on('dblclick', function crossOut() {
-        li.addClass('strike');
+        li.toggleClass('strike');
     });
 
 
@@ -26,7 +26,7 @@ function newItem() {
         li.addClass("delete");
     });
 
-  
-    $('#list').sortable();
+
+    list.sortable();
 
 }
